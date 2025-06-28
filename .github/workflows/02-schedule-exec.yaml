@@ -1,14 +1,14 @@
 # CI de Nível 01 - Disparo a partir de 1 clique
 
 # Nome do nosso 'pipeline'
-name: 'Execução Manual'
+name: 'Execução Agendada'
 
 # Regras de Disparo (Gatilhos/Triggers)
 # Gatilho de exec manual = workflow_dispatch
 
 on:
   schedule:
-    - cron: '40 10 28 06 6'
+    - cron: '45 10 28 6 *'
 
 # Trabalhos/tarefas dentro do pipeline = jobs
 jobs:
