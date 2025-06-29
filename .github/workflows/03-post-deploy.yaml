@@ -48,8 +48,18 @@ jobs:
       - name: Executando Testes e2e
         run: yarn run e2e
 
+      # Gera um artefato com o report do playwright em arquivo
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
         with:
           name: relatorio
           path: ./playwright-report
+
+      # Gera o relatório após os testes
+      - name: Publicar resultado no PR
+        uses: dorny/test-reporter@v1
+        if: ${{ !cancelled() }}
+        with:
+          name: Test Report
+          path: ./test-results/results.xml
+          reporter: java-junit
