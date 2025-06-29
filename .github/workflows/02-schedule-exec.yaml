@@ -1,10 +1,11 @@
-# CI de Nível 01 - Disparo a partir de 1 clique
+# CI de Nível 02 - Disparo agendado
 
 # Nome do nosso 'pipeline'
 name: 'Execução Agendada'
 
 # Regras de Disparo (Gatilhos/Triggers)
 # Gatilho de exec manual = workflow_dispatch
+# Gatilho de exec agendada = schedule
 
 on:
   schedule:
